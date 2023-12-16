@@ -6,7 +6,7 @@ Funcionalidade: Exemplo de testes de interface
     Dado que eu acesse o site "https://www.lambdatest.com/selenium-playground/simple-form-demo"
     Quando eu informar <primeiro_numero> no primeiro campo
     E eu informar <segundo_numero> no segundo campo
-    E clicar no botão "Get values"
+    E clicar no botão "Get Sum"
     Então o resultado será <somatorio>
     Exemplos:
       | primeiro_numero | segundo_numero | somatorio |

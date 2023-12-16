@@ -1,23 +1,26 @@
 from behave import step
 from selenium.webdriver.common.by import By
 
-@step(u'que eu acesse o site "{url}"')
+@step(u'that I access the website "{url}"')
 def step_impl(context, url):
     context.driver.get(url)
 
-@step(u'eu informar {firt_number} no primeiro campo')
-def step_impl(context, firt_number):
-    context.driver.find_element(By.ID, "sum1").send_keys(firt_number)
+@step(u'I enter {first_number} in the first field')
+def step_impl(context, first_number):
+    send_number(context, "sum1", first_number)
 
-@step(u'eu informar {second_number} no segundo campo')
+@step(u'I enter {second_number} in the second field')
 def step_impl(context, second_number):
-    context.driver.find_element(By.ID, "sum2").send_keys(second_number)
+    send_number(context, "sum2", second_number)
 
-@step(u'clicar no botão "{button_text}"')
+@step(u'click the "{button_text}" button')
 def step_impl(context, button_text):
     context.driver.find_element(By.XPATH, '//button[text()="' + button_text + '"]').click()
 
-@step(u'o resultado será {expected_result}')
+@step(u'the result will be {expected_result}')
 def step_impl(context, expected_result):
     result = context.driver.find_element(By.XPATH, "//*[@id=\'addmessage\']").text
     assert expected_result == result
+
+def send_number(context, element_id, value):
+    context.driver.find_element(By.ID, element_id).send_keys(value)

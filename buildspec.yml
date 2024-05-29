@@ -6,6 +6,16 @@ phases:
       python: 3.x
 #      nodejs: 12.x
     commands:
+      - apt-get update
+      - apt-get install -y wget unzip curl gnupg
+
+      - curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+      - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+
+      - apt-get update
+      - apt-get install -y google-chrome-stable
+        
       - pip install -r requirements.txt  # Instalar dependências Python
 #      - npm install  # Instalar dependências Node.js, se necessário
   pre_build:

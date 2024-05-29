@@ -7,7 +7,7 @@ phases:
 #      nodejs: 12.x
     commands:
       - pip install -r requirements.txt  # Instalar dependências Python
-      - npm install  # Instalar dependências Node.js, se necessário
+#      - npm install  # Instalar dependências Node.js, se necessário
   pre_build:
     commands:
       - echo Iniciando testes...

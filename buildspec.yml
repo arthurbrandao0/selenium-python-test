@@ -13,12 +13,11 @@ phases:
       - echo Iniciando testes...
   build:
     commands:
-      - pytest tests/api  # Executar testes de API
-      - pytest tests/ui  # Executar testes de UI com Selenium
+      - behave --no-capture -f allure -o logs ./features
   post_build:
     commands:
       - echo Testes concluídos
-      - aws s3 cp reports/ s3://meu-bucket-de-relatorios/ --recursive  # Enviar relatórios de teste para o S3
+#      - aws s3 cp reports/ s3://meu-bucket-de-relatorios/ --recursive  # Enviar relatórios de teste para o S3
 artifacts:
   files:
     - '**/*'

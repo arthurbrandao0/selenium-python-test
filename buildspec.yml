@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       python: 3.x
-      nodejs: 12.x
+#      nodejs: 12.x
     commands:
       - pip install -r requirements.txt  # Instalar dependências Python
       - npm install  # Instalar dependências Node.js, se necessário

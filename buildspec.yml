@@ -15,7 +15,7 @@ phases:
 
       - apt-get update
       - apt-get install -y google-chrome-stable
-        
+
       - pip install -r requirements.txt  # Instalar dependências Python
 #      - npm install  # Instalar dependências Node.js, se necessário
   pre_build:
@@ -28,8 +28,8 @@ phases:
     commands:
       - echo Testes concluídos
 #      - aws s3 cp reports/ s3://meu-bucket-de-relatorios/ --recursive  # Enviar relatórios de teste para o S3
-artifacts:
-  files:
-    - '**/*'
-  base-directory: 'reports'
-  discard-paths: yes
+#artifacts:
+#  files:
+#    - '**/*'
+#  base-directory: 'reports'
+#  discard-paths: yes

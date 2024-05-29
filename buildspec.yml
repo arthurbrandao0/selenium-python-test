@@ -27,9 +27,10 @@ phases:
   post_build:
     commands:
       - echo Testes concluídos
-#      - aws s3 cp reports/ s3://meu-bucket-de-relatorios/ --recursive  # Enviar relatórios de teste para o S3
-#artifacts:
-#  files:
-#    - '**/*'
-#  base-directory: 'reports'
-#  discard-paths: yes
+      - aws s3 cp reports/ s3://reports-pipeline --recursive  # Enviar relatórios de teste para o S3
+#      - aws s3 cp logs/ s3://reports-pipeline --recursive  # Enviar relatórios de teste para o S3
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'reports'
+  discard-paths: yes

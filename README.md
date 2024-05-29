@@ -53,9 +53,6 @@ Make sure the virtual environment is activated.
 To run the tests, use the following command:
 
 ```bash
-<<<<<<< HEAD
-behave
-=======
 behave --no-capture -f allure -o logs ./features
 ```
 
@@ -68,4 +65,4 @@ After generating the data with the command above, the report can be displayed us
 ```bash
 allure serve logs
 ```
->>>>>>> aws_allure_report
+
